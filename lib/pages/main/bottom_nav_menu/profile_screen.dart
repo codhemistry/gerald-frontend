@@ -51,19 +51,19 @@ class ProfileScreen extends StatelessWidget {
                   }),
                   const Divider(thickness: 1, height: 1),
                   ListItemBuilder.buildListItem(ProfileScreenText.accountSetting, Icons.chevron_right, () {
-                    // Handle item tap
+                    Get.offAllNamed(NavigationRoute.comingsoon);
                   }),
                   const Divider(thickness: 1, height: 1),
                   ListItemBuilder.buildListItem(ProfileScreenText.aboutGerald, Icons.chevron_right, () {
-                    // Handle item tap
+                    Get.offAllNamed(NavigationRoute.comingsoon);
                   }),
                   const Divider(thickness: 1, height: 1),
                   ListItemBuilder.buildListItem(ProfileScreenText.termsAndConditions, Icons.chevron_right, () {
-                    // Handle item tap
+                    Get.offAllNamed(NavigationRoute.comingsoon);
                   }),
                   const Divider(thickness: 1, height: 1),
                   ListItemBuilder.buildListItem(ProfileScreenText.privacyPolicy, Icons.chevron_right, () {
-                    // Handle item tap
+                    Get.offAllNamed(NavigationRoute.comingsoon);
                   }),
                   const Divider(thickness: 1, height: 1),
                   ListItemBuilder.buildListItem(ProfileScreenText.signOut, Icons.chevron_right, () {

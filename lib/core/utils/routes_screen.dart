@@ -1,6 +1,7 @@
 import 'package:gerald_app/pages/auth/login_screen.dart';
-import 'package:gerald_app/pages/explore/editpump_view.dart';
-import 'package:gerald_app/pages/explore/pumpdetail_view.dart';
+import 'package:gerald_app/pages/comingsoon/comingsoon_screen.dart';
+import 'package:gerald_app/pages/explore/editpump_screen.dart';
+import 'package:gerald_app/pages/explore/pumpdetail_screen.dart';
 import 'package:gerald_app/pages/main/bottom_nav_menu/explore_screen.dart';
 import 'package:gerald_app/pages/main/bottom_nav_menu/lapor_screen.dart';
 import 'package:gerald_app/pages/main/bottom_nav_menu/notifikasi_screen.dart';
@@ -25,6 +26,7 @@ class NavigationRoute {
   static String editprofile = '/editprofile';
   static String pumpdetail = '/pumpdetail';
   static String editpump = '/editpump';
+  static String comingsoon = '/comingsoon';
 
 
 
@@ -41,5 +43,6 @@ class NavigationRoute {
     GetPage(name: editprofile, page: () => const EditProfileScreen()),
     GetPage(name: pumpdetail, page: () => const PumpHouseScreen()),
     GetPage(name: editpump, page: () => EditpumpScreem()),
+    GetPage(name: comingsoon, page: () => ComingSoonScreen()),
   ];
 }
