@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:gerald_app/core/global_components/base_widget_container.dart';
+import 'package:gerald_app/core/global_components/custom_backbutton.dart';
 import 'package:gerald_app/core/global_components/custom_dialog.dart';
 import 'package:gerald_app/core/global_components/custom_dropdown.dart';
 import 'package:gerald_app/core/global_components/custom_textfield.dart';
+import 'package:gerald_app/core/utils/routes_screen.dart';
 import 'package:get/get.dart';
 
 class EditProfileScreen extends StatelessWidget {
@@ -10,10 +13,9 @@ class EditProfileScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return BaseWidgetContainer(
       appBar: AppBar(
-        leading: IconButton(
-          icon: const Icon(Icons.close),
+        leading: CustomBackButton(
           onPressed: () {
             Get.dialog(CustomDialog(
               title: 'Batalkan Edit?',
@@ -25,8 +27,7 @@ class EditProfileScreen extends StatelessWidget {
               leftButtonTextColor: Colors.white,
               rightButtonTextColor: Colors.blue,
               onLeftButtonPressed: () {
-                // Handle edit action
-                Get.back(); // Close the dialog
+                Get.offAllNamed(NavigationRoute.seeprofile);
               },
               onRightButtonPressed: () {
                 // Handle save action

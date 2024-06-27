@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gerald_app/core/global_components/base_widget_container.dart';
+import 'package:gerald_app/core/global_components/custom_backbutton.dart';
 import 'package:gerald_app/core/global_components/global_text.dart';
 import 'package:gerald_app/core/utils/routes_screen.dart';
 import 'package:gerald_app/pages/profile/builder/profile_builder.dart';
@@ -13,10 +14,9 @@ class SeeProfileScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return BaseWidgetContainer(
       appBar: AppBar(
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back),
+        leading: CustomBackButton(
           onPressed: () {
-            
+            Get.offAllNamed(NavigationRoute.mainMenu);
           },
         ),
         title: const Text('Akun'),

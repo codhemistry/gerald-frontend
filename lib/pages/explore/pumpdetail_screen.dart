@@ -15,7 +15,7 @@ class PumpHouseScreen extends StatelessWidget {
       appBar: AppBar(
         leading: CustomBackButton(
           onPressed: () {
-            Get.back();
+            Get.offAllNamed(NavigationRoute.mainMenu);
           },
         ),
         title: const GlobalText(

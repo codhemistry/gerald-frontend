@@ -20,11 +20,11 @@ class BottomNav extends StatelessWidget {
           items:  const [
             BottomNavigationBarItem(
               icon: Icon(Icons.explore),
-              label: 'Explore',
+              label: 'Eksplor',
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.grid_view_rounded),
-              label: 'Lapor',
+              label: 'Laporan',
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.notifications),
@@ -32,7 +32,7 @@ class BottomNav extends StatelessWidget {
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.person),
-              label: 'Profile',
+              label: 'Profil',
             ),
           ],
         ));

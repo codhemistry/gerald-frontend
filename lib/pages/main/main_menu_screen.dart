@@ -5,8 +5,8 @@ import 'package:gerald_app/core/global_components/base_bottom_nav.dart';
 import 'package:gerald_app/core/global_components/base_widget_container.dart';
 import 'package:gerald_app/core/helpers/bottom_nav_controller.dart';
 import 'package:gerald_app/pages/main/bottom_nav_menu/explore_screen.dart';
-import 'package:gerald_app/pages/main/bottom_nav_menu/lapor_screen.dart';
-import 'package:gerald_app/pages/main/bottom_nav_menu/notifikasi_screen.dart';
+import 'package:gerald_app/pages/main/bottom_nav_menu/report_screen.dart';
+import 'package:gerald_app/pages/main/bottom_nav_menu/notification_screen.dart';
 import 'package:gerald_app/pages/main/bottom_nav_menu/profile_screen.dart';
 import 'package:get/get.dart';
 
@@ -25,7 +25,7 @@ class MainMenuScreen extends StatelessWidget {
             case 0:
               return  const ExploreScreen();
             case 1:
-              return  const LaporScreen();
+              return  const ReportScreen();
             case 2:
               return const NotifiesScreen();
             case 3:

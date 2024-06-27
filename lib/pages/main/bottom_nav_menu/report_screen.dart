@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:gerald_app/core/global_components/base_widget_container.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:gerald_app/core/global_components/global_text.dart';
 import 'package:gerald_app/pages/main/bottom_nav_menu/builders/laporlistitem_builder.dart';
 
 
-class LaporScreen extends StatefulWidget {
-  const LaporScreen({super.key});
+class ReportScreen extends StatefulWidget {
+  const ReportScreen({super.key});
 
   @override
-  _LaporScreenState createState() => _LaporScreenState();
+  _ReportScreenState createState() => _ReportScreenState();
 }
 
-class _LaporScreenState extends State<LaporScreen> with SingleTickerProviderStateMixin {
+class _ReportScreenState extends State<ReportScreen> with SingleTickerProviderStateMixin {
   late TabController _tabController;
 
   @override
@@ -32,7 +33,7 @@ class _LaporScreenState extends State<LaporScreen> with SingleTickerProviderStat
       body: Column(
         children: [
           AppBar(
-            title: const Text('Lapor'),
+            title: GlobalText(text: 'Laporan', type: TextType.bold, fontSize: 18.sp),
             centerTitle: true,
             actions: [
               IconButton(
@@ -48,12 +49,12 @@ class _LaporScreenState extends State<LaporScreen> with SingleTickerProviderStat
             padding: EdgeInsets.symmetric(horizontal: 16.0.w),
             child: TabBar(
               controller: _tabController,
-              indicator: BoxDecoration(
-                borderRadius: BorderRadius.circular(20.r),
-                color: Colors.blue,
+              indicator: UnderlineTabIndicator(
+                borderSide: BorderSide(width: 2.0, color: Colors.black),
+                insets: EdgeInsets.symmetric(horizontal: 16.0.w),
               ),
-              labelColor: Colors.white,
-              unselectedLabelColor: Colors.black,
+              labelColor: Colors.black,
+              unselectedLabelColor: Colors.grey[400],
               tabs: const [
                 Tab(text: 'To do'),
                 Tab(text: 'In progress'),

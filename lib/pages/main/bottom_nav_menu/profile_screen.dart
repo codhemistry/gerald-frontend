@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gerald_app/core/constants/text.dart';
 import 'package:gerald_app/core/global_components/base_widget_container.dart';
 import 'package:gerald_app/core/global_components/custom_dialog.dart';
+import 'package:gerald_app/core/global_components/global_text.dart';
 import 'package:gerald_app/core/utils/routes_screen.dart';
 import 'package:gerald_app/pages/main/bottom_nav_menu/builders/listitem_builder.dart';
 import 'package:get/get.dart';
@@ -14,7 +15,7 @@ class ProfileScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return  BaseWidgetContainer(
       appBar: AppBar(
-        title: const Text(ProfileScreenText.profile),
+        title: GlobalText(text: ProfileScreenText.profile, type: TextType.bold, fontSize: 18.sp),
         centerTitle: true,
       ),
       body: Column(
@@ -26,20 +27,8 @@ class ProfileScreen extends StatelessWidget {
             child: Icon(Icons.person, size: 50.r, color: Colors.grey),
           ),
           SizedBox(height: 10.h),
-          Text(
-            'Zainul',
-            style: TextStyle(
-              fontSize: 24.sp,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-          Text(
-            '@zainul123',
-            style: TextStyle(
-              fontSize: 16.sp,
-              color: Colors.grey,
-            ),
-          ),
+          GlobalText(text: 'Zainul Abidin', type: TextType.bold, fontSize: 24.sp),
+          GlobalText(text: '@zainul123', color: Colors.grey, fontSize: 16.sp, type: TextType.normal,),
           SizedBox(height: 20.h),
           Expanded(
             child: Padding(

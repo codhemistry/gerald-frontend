@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:gerald_app/pages/main/bottom_nav_menu/builders/base_button.dart';
 
 class PlaceholderContent extends StatelessWidget {
   const PlaceholderContent({Key? key}) : super(key: key);
@@ -41,15 +42,7 @@ class PlaceholderContent extends StatelessWidget {
             textAlign: TextAlign.center,
           ),
           SizedBox(height: 20.h),
-          ElevatedButton(
-            onPressed: () {
-              // Handle button press
-            },
-            child: Text(
-              'Buat laporan',
-              style: TextStyle(fontSize: 16.sp),
-            ),
-          ),
+          BaseButton(text: 'Buat laporan', onPressed: () {}),
         ],
       ),
     );

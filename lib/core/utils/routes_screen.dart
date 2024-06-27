@@ -3,8 +3,8 @@ import 'package:gerald_app/pages/comingsoon/comingsoon_screen.dart';
 import 'package:gerald_app/pages/explore/editpump_screen.dart';
 import 'package:gerald_app/pages/explore/pumpdetail_screen.dart';
 import 'package:gerald_app/pages/main/bottom_nav_menu/explore_screen.dart';
-import 'package:gerald_app/pages/main/bottom_nav_menu/lapor_screen.dart';
-import 'package:gerald_app/pages/main/bottom_nav_menu/notifikasi_screen.dart';
+import 'package:gerald_app/pages/main/bottom_nav_menu/report_screen.dart';
+import 'package:gerald_app/pages/main/bottom_nav_menu/notification_screen.dart';
 import 'package:gerald_app/pages/main/bottom_nav_menu/profile_screen.dart';
 import 'package:gerald_app/pages/main/main_menu_screen.dart';
 import 'package:gerald_app/pages/main/onboarding_screen.dart';
@@ -33,7 +33,7 @@ class NavigationRoute {
   static List<GetPage> routes = [
     GetPage(name: initial, page: () => const SplashScreen()),
     GetPage(name: explore, page: () => const ExploreScreen()),
-    GetPage(name: lapor, page: () => const LaporScreen()),
+    GetPage(name: lapor, page: () => const ReportScreen()),
     GetPage(name: notifikasi, page: () => const NotifiesScreen()),
     GetPage(name: profile, page: () => const ProfileScreen()),
     GetPage(name: mainMenu, page: () => const MainMenuScreen()),

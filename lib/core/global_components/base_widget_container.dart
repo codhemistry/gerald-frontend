@@ -30,7 +30,11 @@ class BaseWidgetContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return PopScope(
       canPop: canPop ?? true,
-      onPopInvoked: onPopInvoked,
+      onPopInvoked: onPopInvoked ?? (bool isPop) {
+        if (isPop) {
+          Navigator.of(context).pop();
+        }
+      },
       child: Scaffold(
         appBar: appBar,
         body: actvateScroll ?? false
