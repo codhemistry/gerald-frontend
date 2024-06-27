@@ -78,11 +78,11 @@ class EditProfileScreen extends StatelessWidget {
               SizedBox(height: 20.h),
               const CustomTextField(
                 label: 'Nama',
-                placeholder: 'Zainul',
+                placeholder: 'nama',
               ),
               const CustomTextField(
                 label: 'Username',
-                placeholder: 'zainul123',
+                placeholder: 'username',
               ),
               const CustomDropdownField(
                 label: 'Rumah Pompa',

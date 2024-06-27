@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:gerald_app/core/global_components/global_text.dart';
 
 class ProfileInfoRow extends StatelessWidget {
   final String title;
@@ -20,22 +21,18 @@ class ProfileInfoRow extends StatelessWidget {
         children: [
           SizedBox(
             width: 120.w,
-            child: Text(
-              title,
-              style: TextStyle(
-                fontSize: 16.sp,
-                fontWeight: FontWeight.w500,
-              ),
+            child: GlobalText(
+              text: title,
+              fontSize: 16.sp,
+              type: TextType.bold,
             ),
           ),
           Expanded(
-            child: Text(
-              value,
-              style: TextStyle(
-                fontSize: 16.sp,
-                color: Colors.grey.shade600,
-              ),
-            ),
+            child: GlobalText(
+              text: value,
+              fontSize: 16.sp,
+              color: Colors.grey.shade600, 
+            )
           ),
         ],
       ),

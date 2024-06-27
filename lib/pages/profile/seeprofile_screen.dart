@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gerald_app/core/global_components/base_widget_container.dart';
+import 'package:gerald_app/core/global_components/global_text.dart';
 import 'package:gerald_app/core/utils/routes_screen.dart';
 import 'package:gerald_app/pages/profile/builder/profile_builder.dart';
 import 'package:get/get.dart';
@@ -36,7 +37,7 @@ class SeeProfileScreen extends StatelessWidget {
         ],
       ),
       body: Padding(
-        padding: EdgeInsets.all(16.0.w),
+        padding: EdgeInsets.all(25.0.w),
         child: Column(
           children: [
             CircleAvatar(
@@ -45,20 +46,12 @@ class SeeProfileScreen extends StatelessWidget {
               child: Icon(Icons.person, size: 50.r, color: Colors.grey),
             ),
             SizedBox(height: 10.h),
-            Text(
-              'Zainul',
-              style: TextStyle(
-                fontSize: 24.sp,
-                fontWeight: FontWeight.bold,
-              ),
+            GlobalText(
+              text: 'Zainul',
+              fontSize: 20.sp,
+              type: TextType.bold,
             ),
-            Text(
-              '@zainul123',
-              style: TextStyle(
-                fontSize: 16.sp,
-                color: Colors.grey,
-              ),
-            ),
+            GlobalText(text: '@zainul123', fontSize: 16.sp),
             SizedBox(height: 20.h),
             const ProfileInfoRow(
               title: 'Rumah Pompa',
