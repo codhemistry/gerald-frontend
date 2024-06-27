@@ -4,11 +4,13 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 class CustomDropdownField extends StatelessWidget {
   final String label;
   final String value;
+  final List<String> items;
 
   const CustomDropdownField({
     Key? key,
     required this.label,
     required this.value,
+    required this.items,
   }) : super(key: key);
 
   @override
@@ -22,11 +24,11 @@ class CustomDropdownField extends StatelessWidget {
             borderRadius: BorderRadius.circular(8.r),
           ),
         ),
-        value: value,
-        items: <String>['Option 1', 'Option 2', 'Option 3'].map((String option) {
+        value: items.contains(value) ? value : items.first,
+        items: items.map((String item) {
           return DropdownMenuItem<String>(
-            value: option,
-            child: Text(option),
+            value: item,
+            child: Text(item),
           );
         }).toList(),
         onChanged: (String? newValue) {

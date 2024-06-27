@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:gerald_app/core/constants/images.dart';
+import 'package:gerald_app/core/constants/text.dart';
 import 'package:gerald_app/core/global_components/base_widget_container.dart';
+import 'package:gerald_app/core/global_components/custom_button.dart';
+import 'package:gerald_app/core/global_components/global_text.dart';
 import 'package:gerald_app/pages/auth/controller/login_controller.dart';
 import 'package:get/get.dart';
 
@@ -37,16 +40,14 @@ class LoginScreen extends StatelessWidget {
                   const SizedBox(
                     height: 16,
                   ),
-                  const Text(
-                    'Selamat datang!',
-                  ),
+                  const GlobalText(text: LoginScreenText.welcome, type: TextType.bold, fontSize: 24.0),
                   const SizedBox(height: 16),
                   TextField(
                     decoration: InputDecoration(
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(12),
                       ),
-                      labelText: 'Username/Email',
+                      labelText: LoginScreenText.useremail,
                     ),
                   ),
                   const SizedBox(height: 16),
@@ -57,7 +58,7 @@ class LoginScreen extends StatelessWidget {
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(12),
                           ),
-                          labelText: 'Password',
+                          labelText: LoginScreenText.password,
                           suffixIcon: IconButton(
                             icon: Icon(
                               loginController.isHidden.value
@@ -79,21 +80,15 @@ class LoginScreen extends StatelessWidget {
                       onPressed: () {
                         // Handle forgot password
                       },
-                      child: const Text('Lupa password?'),
+                      child: const Text(LoginScreenText.forgotPassword),
                     ),
                   ),
                   const SizedBox(height: 16),
-                  ElevatedButton(
+                  GlobalButton(
                     onPressed: () {
                       loginController.login();
                     },
-                    style: ElevatedButton.styleFrom(
-                      foregroundColor: Colors.white,
-                      backgroundColor: Colors.blue,
-                      padding: const EdgeInsets.symmetric(vertical: 16),
-                      textStyle: const TextStyle(fontSize: 16),
-                    ),
-                    child: const Center(child: Text('Masuk')),
+                    text: LoginScreenText.login,
                   ),
                 ],
               ),

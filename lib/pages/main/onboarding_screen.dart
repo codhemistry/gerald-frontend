@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:gerald_app/core/constants/images.dart';
+import 'package:gerald_app/core/constants/text.dart';
 import 'package:gerald_app/core/global_components/base_widget_container.dart';
+import 'package:gerald_app/core/global_components/custom_button.dart';
+import 'package:gerald_app/core/global_components/global_text.dart';
 import 'package:gerald_app/core/utils/routes_screen.dart';
 import 'package:get/get.dart';
 
@@ -35,28 +38,22 @@ class OnboardingScreen extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Text(
-                    'Ayok Rek Jogo Suroboyo Bebas Genangan!',
+                  const GlobalText(
+                    text: OnboardingText.title,
+                    type: TextType.bold,
+                    fontSize: 24.0,
                   ),
-                  const SizedBox(height: 8),
-                  Text(
-                    'Pantau ketinggian air, ramalan cuaca, dan status pompa terkini. Dapatkan notifikasi apabila keadaan darurat terjadi. Gerald siap bantu kamu bebaskan Surabaya dari kenangan, eh, genangan :D',
-                    style: TextStyle(
-                      fontSize: 12,
-                      color: Colors.grey[700],
-                    ),
+                  const GlobalText(
+                    text: OnboardingText.description,
+                    type: TextType.desc,
+                    fontSize: 12.0,
                   ),
                   const SizedBox(height: 16),
-                  ElevatedButton(
+                  GlobalButton(
+                    text: OnboardingText.button,
                     onPressed: () {
                       Get.offAllNamed(NavigationRoute.login);
                     },
-                    style: ElevatedButton.styleFrom(
-                      foregroundColor: Colors.white, backgroundColor: Colors.blue,
-                      padding: const EdgeInsets.symmetric(vertical: 16),
-                      textStyle: const TextStyle(fontSize: 16),
-                    ),
-                    child: const Center(child: Text('Mulai')),
                   ),
                 ],
               ),

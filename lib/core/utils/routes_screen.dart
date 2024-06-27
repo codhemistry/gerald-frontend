@@ -6,6 +6,8 @@ import 'package:gerald_app/pages/main/bottom_nav_menu/profile_screen.dart';
 import 'package:gerald_app/pages/main/main_menu_screen.dart';
 import 'package:gerald_app/pages/main/onboarding_screen.dart';
 import 'package:gerald_app/pages/main/splash_screen.dart';
+import 'package:gerald_app/pages/profile/editprofile_screen.dart';
+import 'package:gerald_app/pages/profile/seeprofile_screen.dart';
 import 'package:get/get.dart';
 
 class NavigationRoute {
@@ -17,6 +19,8 @@ class NavigationRoute {
   static String mainMenu= '/mainmenu';
   static String login = '/login';
   static String onboarding = '/onboarding';
+  static String seeprofile = '/seeprofile';
+  static String editprofile = '/editprofile';
 
 
 
@@ -29,5 +33,7 @@ class NavigationRoute {
     GetPage(name: mainMenu, page: () => const MainMenuScreen()),
     GetPage(name: login, page: () => LoginScreen()),
     GetPage(name: onboarding, page: () => const OnboardingScreen()),
+    GetPage(name: seeprofile, page: () => const SeeProfileScreen()),
+    GetPage(name: editprofile, page: () => const EditProfileScreen()),
   ];
 }

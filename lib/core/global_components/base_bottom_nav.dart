@@ -23,7 +23,7 @@ class BottomNav extends StatelessWidget {
               label: 'Explore',
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.edit),
+              icon: Icon(Icons.grid_view_rounded),
               label: 'Lapor',
             ),
             BottomNavigationBarItem(
