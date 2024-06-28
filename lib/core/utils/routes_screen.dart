@@ -37,7 +37,7 @@ class NavigationRoute {
     GetPage(name: explore, page: () => const ExploreScreen()),
     GetPage(name: lapor, page: () => const ReportScreen()),
     GetPage(name: notifikasi, page: () => const NotifiesScreen()),
-    GetPage(name: profile, page: () => const ProfileScreen()),
+    GetPage(name: profile, page: () => ProfileScreen()),
     GetPage(name: mainMenu, page: () => const MainMenuScreen()),
     GetPage(name: login, page: () => LoginScreen()),
     GetPage(name: onboarding, page: () => const OnboardingScreen()),

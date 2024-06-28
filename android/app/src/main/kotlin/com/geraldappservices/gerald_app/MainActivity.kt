@@ -1,4 +1,4 @@
-package com.geraldappservices.gerald_app
+package com.geraldappservices.app
 
 import io.flutter.embedding.android.FlutterActivity
 

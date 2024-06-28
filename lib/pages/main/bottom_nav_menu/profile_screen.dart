@@ -6,10 +6,11 @@ import 'package:gerald_app/core/global_components/custom_dialog.dart';
 import 'package:gerald_app/core/global_components/global_text.dart';
 import 'package:gerald_app/core/utils/routes_screen.dart';
 import 'package:gerald_app/pages/main/bottom_nav_menu/builders/listitem_builder.dart';
+import 'package:gerald_app/pages/main/bottom_nav_menu/controller/profile_controller.dart';
 import 'package:get/get.dart';
 
 class ProfileScreen extends StatelessWidget {
-  const ProfileScreen({super.key});
+  final ProfileController profileController = Get.put(ProfileController());
 
   @override
   Widget build(BuildContext context) {
@@ -70,9 +71,7 @@ class ProfileScreen extends StatelessWidget {
                         Get.back(); // Close the dialog
                       },
                       onRightButtonPressed: () {
-                        // Handle save action
-                        Get.back(); // Close the dialog
-                        // Additional save logic here
+                        profileController.logOut();
                       },
                     ));
                   }),

@@ -1,10 +1,12 @@
 // ignore_for_file: library_private_types_in_public_api
 
 import 'dart:async';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:gerald_app/core/global_components/base_widget_container.dart';
-import 'package:gerald_app/core/utils/routes_screen.dart';
+import 'package:gerald_app/pages/main/main_menu_screen.dart';
+import 'package:gerald_app/pages/main/onboarding_screen.dart';
 import 'package:get/get.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -22,20 +24,16 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   Future<void> _decideNextScreen() async {
-    // final SharedPreferencesUtils authLocalDatasource = SharedPreferencesUtils();
-    // await authLocalDatasource.init();
-    
-    // Memberikan delay 1 detik sebelum menentukan halaman selanjutnya
     await Future.delayed(const Duration(seconds: 3));
-    
-    Get.offNamed(NavigationRoute.onboarding);
-    
-    //bool isTokenAvailable = await SharedPreferencesUtils().isLogin();
-    // if (isTokenAvailable) {
-    //   Get.offNamed(NavigationRoute.mainMenu);
-    // } else {
-    //   Get.offNamed(NavigationRoute.login);
-    // }
+
+    FirebaseAuth.instance.authStateChanges().listen((User? user) {
+      if (user == null) {
+        Get.offAll(() => OnboardingScreen());
+      } else {
+        Get.offAll(() => MainMenuScreen());
+      }
+    });
+
   }
 
   @override

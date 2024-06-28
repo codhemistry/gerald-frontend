@@ -44,6 +44,7 @@ class LoginScreen extends StatelessWidget {
                   const GlobalText(text: LoginScreenText.welcome, type: TextType.bold, fontSize: 24.0),
                   const SizedBox(height: 16),
                   TextField(
+                    controller: loginController.emailController,
                     decoration: InputDecoration(
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(12),

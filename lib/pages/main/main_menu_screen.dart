@@ -29,7 +29,7 @@ class MainMenuScreen extends StatelessWidget {
             case 2:
               return const NotifiesScreen();
             case 3:
-              return const ProfileScreen();
+              return ProfileScreen();
             default:
               return const SizedBox.shrink();
           }
