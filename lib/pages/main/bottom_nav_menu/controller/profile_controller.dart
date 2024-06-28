@@ -6,8 +6,13 @@ class ProfileController extends GetxController {
   FirebaseAuth auth = FirebaseAuth.instance;
   FirebaseFirestore firestore = FirebaseFirestore.instance;
 
-  Stream<DocumentSnapshot<Map<String, dynamic>>> streamUser() async* {
-    yield* firestore.collection('users').doc(auth.currentUser!.uid).snapshots();
+  Stream<DocumentSnapshot> get userStream {
+    User? user = auth.currentUser;
+    if (user != null) {
+      return firestore.collection('user').doc(user.uid).snapshots();
+    } else {
+      throw Exception("No user signed in");
+    }
   }
 
   void logOut() async {

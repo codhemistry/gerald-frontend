@@ -5,15 +5,11 @@ import 'package:gerald_app/core/global_components/custom_button.dart';
 import 'package:gerald_app/core/global_components/custom_textfield.dart';
 import 'package:gerald_app/core/global_components/global_text.dart';
 import 'package:gerald_app/core/utils/routes_screen.dart';
+import 'package:gerald_app/pages/auth/controller/resetpass_controller.dart';
 import 'package:get/get.dart';
 
 class ForgotpassScreen extends StatelessWidget {
-  final TextEditingController emailController = TextEditingController();
-
-  void _resetPassword() {
-    // Implement your reset password logic here
-    print('Reset password for: ${emailController.text}');
-  }
+  final forgotpassController = Get.put(ResetpassController());
 
   @override
   Widget build(BuildContext context) {
@@ -42,11 +38,14 @@ class ForgotpassScreen extends StatelessWidget {
             CustomTextField(
               label: 'Email', 
               placeholder: 'email',
+              controller: forgotpassController.emailController,
             ),
             SizedBox(height: 20),
             GlobalButton(
               text: 'Reset Password',
-              onPressed: _resetPassword,
+              onPressed: () {
+                forgotpassController.resetPassword();
+              },
             ),
           ],
         ),

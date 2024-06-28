@@ -1,5 +1,6 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
+import 'package:gerald_app/core/constants/data.dart';
 import 'package:gerald_app/core/constants/text.dart';
 import 'package:gerald_app/core/global_components/base_widget_container.dart';
 import 'package:gerald_app/core/global_components/global_text.dart';
@@ -44,21 +45,22 @@ class ExploreScreen extends StatelessWidget {
                 height: 129,
                 child: ListView.builder(
                   itemBuilder: (context, index) {
-                    return const HomeCard(
-                      title: 'Pompa',
-                      icon: Icons.water,
-                      number: '1',
-                      symbols: 'unit',
-                      description: 'Tes deskripsi',
-                    );
-                  },
-                  itemCount: 3,
-                  scrollDirection: Axis.horizontal,
+                  final item = homeCardItems[index];
+                  return HomeCard(
+                    title: item.title,
+                    icon: item.icon,
+                    number: item.number,
+                    symbols: item.symbols,
+                    description: item.description,
+                  );
+                },
+                itemCount: homeCardItems.length,
+                scrollDirection: Axis.horizontal,
                 ),
               ),
               SizedBox(height: 20),
-              WaterLevelChart(
-                spots: const [
+              const WaterLevelChart(
+                spots: [
                   FlSpot(0, 10),
                   FlSpot(1, 20),
                   FlSpot(2, 30),

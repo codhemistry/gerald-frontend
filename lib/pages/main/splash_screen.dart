@@ -4,6 +4,7 @@ import 'dart:async';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:gerald_app/core/constants/images.dart';
 import 'package:gerald_app/core/global_components/base_widget_container.dart';
 import 'package:gerald_app/pages/main/main_menu_screen.dart';
 import 'package:gerald_app/pages/main/onboarding_screen.dart';
@@ -41,21 +42,13 @@ class _SplashScreenState extends State<SplashScreen> {
     return  BaseWidgetContainer(
       body: Stack(
         children: <Widget>[
-          Container(
-            // decoration: const BoxDecoration(
-            //   image: DecorationImage(
-            //     image: AssetImage(Images.bgSplash),
-            //     fit: BoxFit.cover,
-            //   ),
-            // ),
-          ),
-          const Center(
-            // child: Image.asset(
-            //   Images.titleSplash,
-            //   width: 200,
-            //   height: 200,
-            // ),
-            child: Text("Splash Screen"),
+          Center(
+            child: Image.asset(
+              Images.logo,
+              width: 200,
+              height: 200,
+            ),
+            // child: Text("Gerald App"),
           ),
         ],
       ),

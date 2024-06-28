@@ -33,7 +33,7 @@ class NavigationRoute {
 
 
   static List<GetPage> routes = [
-    GetPage(name: initial, page: () => const SplashScreen()),
+    GetPage(name: initial, page: () => SplashScreen()),
     GetPage(name: explore, page: () => const ExploreScreen()),
     GetPage(name: lapor, page: () => const ReportScreen()),
     GetPage(name: notifikasi, page: () => const NotifiesScreen()),
@@ -41,7 +41,7 @@ class NavigationRoute {
     GetPage(name: mainMenu, page: () => const MainMenuScreen()),
     GetPage(name: login, page: () => LoginScreen()),
     GetPage(name: onboarding, page: () => const OnboardingScreen()),
-    GetPage(name: seeprofile, page: () => const SeeProfileScreen()),
+    GetPage(name: seeprofile, page: () => SeeProfileScreen()),
     GetPage(name: editprofile, page: () => const EditProfileScreen()),
     GetPage(name: pumpdetail, page: () => const PumpHouseScreen()),
     GetPage(name: editpump, page: () => EditpumpScreem()),

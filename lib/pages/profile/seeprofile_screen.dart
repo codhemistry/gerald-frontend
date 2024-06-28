@@ -8,8 +8,8 @@ import 'package:gerald_app/pages/profile/builder/profile_builder.dart';
 import 'package:get/get.dart';
 
 class SeeProfileScreen extends StatelessWidget {
-  const SeeProfileScreen({super.key});
-
+  final Map<String, dynamic> userData = Get.arguments;
+  
   @override
   Widget build(BuildContext context) {
     return BaseWidgetContainer(
@@ -24,7 +24,7 @@ class SeeProfileScreen extends StatelessWidget {
         actions: [
           TextButton(
             onPressed: () {
-              Get.offAllNamed(NavigationRoute.editprofile);
+              Get.offAllNamed(NavigationRoute.editprofile, arguments: userData);
             },
             child: const Text(
               'Edit',
@@ -43,31 +43,31 @@ class SeeProfileScreen extends StatelessWidget {
             CircleAvatar(
               radius: 50.r,
               backgroundColor: Colors.grey.shade200,
-              child: Icon(Icons.person, size: 50.r, color: Colors.grey),
+              child: Image(image: NetworkImage('https://ui-avatars.com/api/?name=${userData['nama']}'), fit: BoxFit.fill,),
             ),
             SizedBox(height: 10.h),
             GlobalText(
-              text: 'Zainul',
+              text: userData['nama'],
               fontSize: 20.sp,
               type: TextType.bold,
             ),
-            GlobalText(text: '@zainul123', fontSize: 16.sp),
+            GlobalText(text: '@${userData['username']}', fontSize: 16.sp),
             SizedBox(height: 20.h),
             const ProfileInfoRow(
               title: 'Rumah Pompa',
               value: 'Mulyosari (Ring road ITS)',
             ),
-            const ProfileInfoRow(
+            ProfileInfoRow(
               title: 'Jabatan',
-              value: 'Petugas',
+              value: userData['jabatan'],
             ),
-            const ProfileInfoRow(
+            ProfileInfoRow(
               title: 'Nomor HP',
-              value: '-',
+              value: userData['nohp'],
             ),
-            const ProfileInfoRow(
+            ProfileInfoRow(
               title: 'Alamat',
-              value: '-',
+              value: userData['alamat'],
             ),
           ],
         ),
