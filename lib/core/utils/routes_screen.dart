@@ -1,3 +1,4 @@
+import 'package:gerald_app/pages/auth/forgotpass_screen.dart';
 import 'package:gerald_app/pages/auth/login_screen.dart';
 import 'package:gerald_app/pages/comingsoon/comingsoon_screen.dart';
 import 'package:gerald_app/pages/explore/editpump_screen.dart';
@@ -27,6 +28,7 @@ class NavigationRoute {
   static String pumpdetail = '/pumpdetail';
   static String editpump = '/editpump';
   static String comingsoon = '/comingsoon';
+  static String forgotpass = '/forgotpass';
 
 
 
@@ -44,5 +46,6 @@ class NavigationRoute {
     GetPage(name: pumpdetail, page: () => const PumpHouseScreen()),
     GetPage(name: editpump, page: () => EditpumpScreem()),
     GetPage(name: comingsoon, page: () => ComingSoonScreen()),
+    GetPage(name: forgotpass, page: () => ForgotpassScreen()),
   ];
 }
