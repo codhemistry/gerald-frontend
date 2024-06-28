@@ -4,6 +4,7 @@ import 'package:gerald_app/core/constants/text.dart';
 import 'package:gerald_app/core/global_components/base_widget_container.dart';
 import 'package:gerald_app/core/global_components/custom_button.dart';
 import 'package:gerald_app/core/global_components/global_text.dart';
+import 'package:gerald_app/core/utils/routes_screen.dart';
 import 'package:gerald_app/pages/auth/controller/login_controller.dart';
 import 'package:get/get.dart';
 
@@ -78,7 +79,7 @@ class LoginScreen extends StatelessWidget {
                     alignment: Alignment.centerLeft,
                     child: TextButton(
                       onPressed: () {
-                        // Handle forgot password
+                        Get.offAllNamed(NavigationRoute.forgotpass);
                       },
                       child: const Text(LoginScreenText.forgotPassword),
                     ),
